@@ -1,0 +1,22 @@
+.button-ui {
+    height: 32px;
+    font-family: 'TT Lakes';
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    color: white;
+    background-color: $color-conditions;
+    border-radius: 16px;
+    padding: 4px 12px;
+    border: 0;
+    background-image: url(/img/dropdown-icon.svg);
+    background-repeat: no-repeat;
+    vertical-align: top;
+    cursor: pointer;
+    &:hover {
+        box-shadow:1px 1px 3px 1px rgba(0,0,0,0.14);
+    }
+}

@@ -1,0 +1,26 @@
+.more {
+    border: 0;
+    padding-left: 24px;
+    margin: 16px 0;
+    background-color: transparent;
+    font-family: 'TT Lakes';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    position: relative;
+    &:before {
+        content: '';
+        width: 8px;
+        height: 11px;
+        position: absolute;
+        top: 7px;
+        left: 0;
+        background-image: url(../img/read-more-icon.svg);
+        background-position: left center;
+        background-repeat: no-repeat;
+    }
+    &.rotate::before {
+        transform: rotate(180deg);
+    }
+}

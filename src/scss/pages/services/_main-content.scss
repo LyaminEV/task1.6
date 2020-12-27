@@ -1,0 +1,132 @@
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        width: 16px; /* меньше чем справа что бы рамку activ не осветляло(в ширину отступа)*/
+        height: 40px; 
+        background: linear-gradient(90deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    } 
+    &:after {
+        width: 24px;
+        right: 0;
+        background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    }
+    &__item--active {
+        background-color: white;
+        border: $border-item-tabs-active;
+        border-radius: 6px;
+        margin-left: 16px;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 36px;
+        color: #7E7E82;
+        border: 2px solid transparent;
+    }
+    &__item:last-child {
+        margin-right: 0px;
+    }
+}
+.content {
+    margin: 24px 0;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    &__block-txt {
+        padding: 0 16px;
+        line-height: 18px;
+        line-height: 20px;
+    }
+    &__text:last-of-type {
+        display: none;
+    }
+}
+.photo-cps {
+    img {
+    max-width: 100%;
+    max-height: 100%;
+    }
+}
+@media(min-width: 532px) {
+    .about {
+        flex-direction: row;
+        justify-content: space-between;
+        &__block-txt, .photo-cps {
+            flex-basis: 47%;
+        }
+    }
+    .photo-cps {
+        border-radius: 6px;
+        margin-right: 16px;
+    }
+}
+@media(min-width: 768px) {
+    .main {
+        &__title {
+            padding-left: 20px; 
+        }
+    }
+    .tabs{
+        &:before {
+            width: 20px;
+        }
+        &__item--active{
+            margin-left: 24px;
+        }
+    }  
+    .content {
+        padding: 8px;
+    }
+    .about{
+        &__text:last-of-type{
+            display: block;
+            padding-top: 1em;
+        }
+        &__text-hidden {
+            display: none;
+        }
+    }
+    .photo-cps {
+        border-radius: 6px;
+        margin-right: 16px;
+        img {
+        border-radius: 6px;
+        }
+    }
+}
+@media(min-width: 1120px) {
+    .main {
+        &__title{
+            padding-left: 20px;
+        }
+    }
+    .tabs {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        &__item {
+            margin-right: 12px;
+            &:last-child {
+                margin-left: 26px;
+                margin-top: 6px;
+                }
+            }
+        &:before, &:after {
+            display: none;
+        }
+    }
+    .about {
+        &__text-hidden {
+            display: inline;
+        }
+    }
+}

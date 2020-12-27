@@ -1,0 +1,115 @@
+.header {
+    flex-basis: 100%;
+    height: 88px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: $border-secondary;
+}
+.block-left, .block-right  {
+    display: flex;
+    align-items: center;
+}
+.button__lable {
+    display: none;
+}
+.header__button, .communication__button {
+    margin: 8px 16px 8px 0;
+}
+.header__button--menu{
+    background-image: url(../img/burger-menu-icon.svg);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo__icon {
+    width: 97px;
+    height: 52px;
+    background-image: url(../img/Logo.svg);
+}
+.header .header-requests-left {
+    display: none;
+}
+.communication__button--call {
+    background-image: url(../img/call-icon.svg);
+}
+.communication__button--chat {
+    background-image: url(../img/chat-icon.svg);
+}
+.communication__button--profile {
+    background-image: url(../img/profile-icon.svg);
+}
+.communication__button:nth-child(5n) {
+    margin-right: 0;
+}
+.header-requests-right::before{
+    content: '';
+    width: 2px;
+    height: 32px; 
+    margin: 0 20px 0 16px;
+    background: #EAEAEA;
+
+}
+.header__button--request {
+    background-image: url(../img/request-icon.svg);
+}
+.header__button--status {
+    background-image: url(../img/status-icon.svg);
+    margin-right: 0;
+}
+@media(min-width: 768px) {
+    .header {
+        padding: 0 24px;
+    }
+    .separator::before{
+        content: '';
+        width: 2px;
+        height: 32px;
+        margin-right: 20px;
+        background: #EAEAEA;
+        border-radius: 1px;
+    }
+    .header .header-requests-left {
+        display: flex;
+    }
+}
+@media(min-width: 1120px) {
+    .header {
+        justify-content: flex-end;
+        background-color: transparent;
+        border: 0;
+        position: relative;
+        margin-bottom: -92px;
+        z-index: 1;
+    }
+    .header .block-left {
+        display: none;
+    }
+    .header__button--request {
+        margin-right: 27px;
+    }
+    .header__button--request, .header__button--status {
+        border-radius: 0;
+        font-family: 'TT Lakes';
+        font-weight: 500;
+        width: auto;
+        background-color: transparent;
+        background-position: right center;
+        font-size: 16px;
+        line-height: 24px;
+        padding-right: 40px;      
+    }
+    .button__lable {
+        display: inline;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        padding-right: 8px;
+    }
+    .header-requests-right::before {
+        display: none;
+    }
+}

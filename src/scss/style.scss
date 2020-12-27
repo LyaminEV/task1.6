@@ -1,0 +1,55 @@
+@import "helpers/reset";
+@import "helpers/parameters";
+@import '../../node_modules/swiper/swiper-bundle.min.css';
+body {
+  min-width: 320px;
+  max-width: 1440px;
+  background: #F8F8F8;
+  font-family: 'TT Lakes';
+  font-weight: 400;
+  font-size: 14px;
+  color:  #1B1C21;
+  margin: 0 auto;
+  .main-block {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
+
+
+@import "components/button-ui";
+@import "components/button";
+@import "components/footer";
+@import "components/header";
+@import "components/main-title";
+@import "components/more";
+@import "components/swiper";
+@import "components/title";
+
+@import "pages/services/brands";
+@import "pages/services/main-content";
+@import "pages/services/prices";
+@import "pages/services/technics";
+
+@import "pages/menu";
+@import "pages/feedback";
+
+
+
+@media(min-width: 1440px) {
+  html {
+    background-color: $color-body;
+    body {
+      position: relative;
+      display:flex;
+      flex-direction: row;
+      background-color: #fff;
+      .main-block {
+        background-color: $color-body;
+      }
+    }
+  }
+}
+
+
+

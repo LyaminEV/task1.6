@@ -1,0 +1,19 @@
+//шрифты
+@font-face {font-family: 'TT Lakes';src: url('../fonts/TTLakes-Regular.woff') format('woff');src: url('../fonts/TTLakes-Regular.eot');src: url('../fonts/TTLakes-Regular.ttf') format('truetype');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'TT Lakes';src: url('../fonts/TTLakes-Medium.woff') format('woff');src: url('../fonts/TTLakes-Medium.eot');src: url('../fonts/TTLakes-Medium.ttf') format('truetype');font-weight: 500;font-style: normal;}
+@font-face {font-family: 'TT Lakes';src: url('../fonts/TTLakes-Bold.woff') format('woff');src: url('../fonts/TTLakes-Bold.eot');src: url('../fonts/TTLakes-Bold.ttf') format('truetype');font-weight: 700;font-style: normal;}
+
+// Цвета
+$color-primary: #1B1C21;
+$color-secondary: #7E7E82;
+$color-conditions: #ff3e79;
+$color-form:  #B5B6BC;
+$color-body: #F8F8F8;
+$color-separator: #EAEAEA;
+
+// Рамки
+$border-primary: 1px solid #EAEAEA;
+$border-secondary: 1px solid #D9FFF5;
+$border-item-tabs-active: 2px solid #B8FFEC;
+$border-left-title: 4px solid  #41F6D7;
+

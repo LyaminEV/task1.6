@@ -1,0 +1,23 @@
+.brands {
+    &__link {
+        width: 100%;
+        padding: 0 16px;
+        display: flex;
+        align-content: center;
+        background: url('../img/go-brands-icon.svg') no-repeat 92% center;
+    }
+    &__more {
+        display: none;
+        margin-left: 24px;
+    }
+}
+@media(min-width: 768px) {
+    .brands {
+        &__list--open {
+            height: auto;
+        }
+        &__more{
+            display: flex;
+        }
+    }
+}
