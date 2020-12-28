@@ -80,7 +80,7 @@ body {
   border-radius: 16px;
   padding: 4px 12px;
   border: 0;
-  background-image: url(/img/dropdown-icon.svg);
+  background-image: url(./static/dropdown-icon.svg);
   background-repeat: no-repeat;
   vertical-align: top;
   cursor: pointer; }
@@ -629,6 +629,9 @@ body {
   z-index: 35;
   margin-left: 0;
   background-image: url(./static/burger-menu-close-icon.svg); }
+  .button--close:hover {
+    transform: rotate(360deg);
+    transition: transform 1s ease; }
 
 .menu__logo {
   margin-left: 48px; }
@@ -738,11 +741,11 @@ body {
   left: 0;
   top: 0;
   z-index: 10;
-  display: none; }
+  transform: translateX(-120%);
+  transition: transform 1s ease; }
 
 .modal--visible {
-  display: flex;
-  flex-grow: 1; }
+  transform: translateX(0%); }
 
 .feedback {
   width: 320px;
@@ -757,6 +760,9 @@ body {
     margin-left: -16px; }
   .feedback .button--close {
     position: static; }
+    .feedback .button--close:hover {
+      transform: rotate(360deg);
+      transition: transform 1s ease; }
   .feedback form {
     display: flex;
     flex-direction: column;
