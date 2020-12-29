@@ -3,10 +3,9 @@
     height: 100%;
     background: rgba(255, 255, 255, 0.96);
     position: fixed;
-    left: 0;
-    top: 0;
     z-index: 10;
-    display: none;
+    transform: translateY(-120%);  
+    transition: transform 1s ease;
 }
 
 .menu {
@@ -22,8 +21,7 @@
     background-color: white;
 }
 .menu--visible {
-    display: flex;
-    z-index: 30;
+    transform: translateY(0%);
 }
 .menu-header, .communication  {
     display: flex;
@@ -38,11 +36,15 @@
     z-index: 35;
     margin-left: 0;
     background-image: url(../img/burger-menu-close-icon.svg);
+    &:hover {
+        transform: rotate(360deg);
+        transition: transform 1s ease;
+    }
 }
 .menu__logo {
     margin-left: 48px;
 }
-.button--search {
+.menu__button-search {
     margin-left: auto;
     background-image: url(../img/search-icon.svg);
 }
@@ -65,6 +67,7 @@ margin-bottom: 26px;
 }
 .navigation__item--active {
     position: relative;
+    color: #7E7E82;
 }
 .navigation__item--active::before {
     content: "";
@@ -78,6 +81,14 @@ margin-bottom: 26px;
 }
 .navigation__link {
     color: #1B1C21;
+    background-image: linear-gradient($color-border, $color-border);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.4s ease-in-out;
+    &:hover {
+        background-size: 100% 2px;    
+    }
 }
 .navigation__link--active {
     color: #7E7E82;
@@ -130,7 +141,7 @@ margin-bottom: 26px;
 @media(min-width: 1440px) { 
     .modal-menu {
         box-shadow: none;
-        display: flex;
+        transform: translateY(0%);
         position: static;
         width: 320px;
         .menu {

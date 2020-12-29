@@ -6,12 +6,11 @@
     left: 0;
     top: 0;
     z-index: 10;
-    display: none;
+    transform: translateX(-120%);  
+    transition: transform 0.8s ease;
 }
 .modal--visible {
-    display: flex;
-    flex-grow: 1;
-
+    transform: translateX(0%);
 }
 
 .feedback {
@@ -23,13 +22,17 @@
     position: absolute; 
     right: 0;
     top: 0; 
-    .main-title {
+    .main-title--m {
         margin-left: -16px;
     }
     .button--close {
         position: static;
+        &:hover {
+            transform: rotate(360deg);
+            transition: transform 1s ease;
+        }
     }
-    form {
+    .form {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -44,6 +47,7 @@
                 color: $color-form;
             }
         }
+        
         textarea {
             resize: none;
         }
@@ -51,12 +55,12 @@
             color: $color-conditions;
             font-weight: 500;
             line-height: 16px;
+        }        
+        &__button {
+            width: 136px;
+            margin-left: auto;
+            background-position: 109px center;
         }
-    }
-    .button-ui {
-        width: 136px;
-        margin-left: auto;
-        background-position: 109px center;
     }
 }
 .form__hide{
