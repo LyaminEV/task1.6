@@ -63,7 +63,7 @@ body {
   color: #1B1C21;
   margin: 0 auto; }
   body .main-block {
-    max-width: 1120px;
+    max-width: 1440px;
     margin: 0 auto; }
 
 .button-ui {
@@ -156,6 +156,9 @@ body {
   align-items: center;
   justify-content: center; }
 
+.logo--m {
+  margin-left: 56px; }
+
 .logo__icon {
   width: 97px;
   height: 52px;
@@ -203,7 +206,7 @@ body {
   .header .header-requests-left {
     display: flex; } }
 
-@media (min-width: 1120px) {
+@media (min-width: 1440px) {
   .header {
     justify-content: flex-end;
     background-color: transparent;
@@ -239,12 +242,17 @@ body {
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   padding: 0 12px;
-  margin: 24px 0;
-  display: flex;
   justify-content: space-between;
   font-size: 28px;
   font-weight: 700;
   line-height: 40px; }
+  .main-title--m {
+    display: inline-block;
+    margin: 24px 0; }
+
+@media (min-width: 768px) {
+  .main-title {
+    padding: 0 20px; } }
 
 .more {
   border: 0;
@@ -407,7 +415,7 @@ body {
     margin-right: 0px; }
 
 .content {
-  margin: 24px 0; }
+  padding: 24px 0; }
 
 .about {
   display: flex;
@@ -454,20 +462,12 @@ body {
       border-radius: 6px; } }
 
 @media (min-width: 1120px) {
-  .main__title {
-    padding-left: 20px; }
-  .tabs {
-    flex-wrap: wrap;
-    justify-content: flex-start; }
-    .tabs__item {
-      margin-right: 12px; }
-      .tabs__item:last-child {
-        margin-left: 26px;
-        margin-top: 6px; }
-    .tabs:before, .tabs:after {
-      display: none; }
   .about__text-hidden {
     display: inline; } }
+
+@media (min-width: 1440px) {
+  .tabs:before, .tabs:after {
+    display: none; } }
 
 .prices {
   padding-bottom: 40px; }
@@ -595,10 +595,9 @@ body {
   height: 100%;
   background: rgba(255, 255, 255, 0.96);
   position: fixed;
-  left: 0;
-  top: 0;
   z-index: 10;
-  display: none; }
+  transform: translateY(-120%);
+  transition: transform 1s ease; }
 
 .menu {
   min-width: 320px;
@@ -611,10 +610,49 @@ body {
   letter-spacing: -0.2px;
   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
   background-color: white; }
-
-.menu--visible {
-  display: flex;
-  z-index: 30; }
+  .menu--visible {
+    transform: translateY(0%); }
+  .menu__header {
+    justify-content: space-between; }
+  .menu__logo {
+    margin-left: 48px; }
+  .menu__button-search {
+    margin-left: auto;
+    background-image: url(./static/search-icon.svg); }
+  .menu .navigation {
+    flex-grow: 1; }
+    .menu .navigation__list {
+      padding-bottom: 32px; }
+    .menu .navigation__item {
+      font-family: 'TT Lakes';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 26px; }
+      .menu .navigation__item--active {
+        position: relative;
+        color: #7E7E82; }
+        .menu .navigation__item--active::before {
+          content: "";
+          height: 32px;
+          border-left: 4px solid #41F6D7;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          position: absolute;
+          left: -24px;
+          top: -5px; }
+    .menu .navigation__link {
+      color: #1B1C21;
+      background-image: linear-gradient(#41F6D7, #41F6D7);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size 0.4s ease-in-out; }
+      .menu .navigation__link:hover {
+        background-size: 100% 2px; }
+      .menu .navigation__link--active {
+        color: #7E7E82; }
 
 .menu-header, .communication {
   display: flex;
@@ -633,49 +671,6 @@ body {
     transform: rotate(360deg);
     transition: transform 1s ease; }
 
-.menu__logo {
-  margin-left: 48px; }
-
-.button--search {
-  margin-left: auto;
-  background-image: url(./static/search-icon.svg); }
-
-.menu__header {
-  justify-content: space-between; }
-
-.menu .navigation {
-  flex-grow: 1; }
-
-.navigation__list {
-  padding-bottom: 32px; }
-
-.navigation__item {
-  font-family: 'TT Lakes';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 26px; }
-
-.navigation__item--active {
-  position: relative; }
-
-.navigation__item--active::before {
-  content: "";
-  height: 32px;
-  border-left: 4px solid #41F6D7;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  position: absolute;
-  left: -24px;
-  top: -5px; }
-
-.navigation__link {
-  color: #1B1C21; }
-
-.navigation__link--active {
-  color: #7E7E82; }
-
 .communication {
   flex-wrap: wrap; }
 
@@ -683,36 +678,32 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 13px; }
-
-.contacts__mail {
-  font-size: 16px;
-  font-weight: 500;
-  color: #1B1C21;
-  padding-bottom: 12px; }
-
-.contacts__phone {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1B1C21;
-  line-height: 32px;
-  letter-spacing: -0.6px; }
+  .contacts__mail {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1B1C21;
+    padding-bottom: 12px; }
+  .contacts__phone {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1B1C21;
+    line-height: 32px;
+    letter-spacing: -0.6px; }
 
 .language-switch {
   padding-top: 35px; }
-
-.language-switch__button {
-  border: none;
-  background-color: transparent;
-  font-family: 'TT Lakes';
-  color: #1B1C21;
-  font-size: 16px;
-  font-weight: 500;
-  padding-right: 7px;
-  line-height: 24px;
-  cursor: pointer; }
-
-.language-switch__button--active {
-  color: #7E7E82; }
+  .language-switch__button {
+    border: none;
+    background-color: transparent;
+    font-family: 'TT Lakes';
+    color: #1B1C21;
+    font-size: 16px;
+    font-weight: 500;
+    padding-right: 7px;
+    line-height: 24px;
+    cursor: pointer; }
+    .language-switch__button--active {
+      color: #7E7E82; }
 
 @media (min-width: 768px) {
   .menu__logo {
@@ -721,7 +712,7 @@ body {
 @media (min-width: 1440px) {
   .modal-menu {
     box-shadow: none;
-    display: flex;
+    transform: translateY(0%);
     position: static;
     width: 320px; }
     .modal-menu .menu {
@@ -742,7 +733,7 @@ body {
   top: 0;
   z-index: 10;
   transform: translateX(-120%);
-  transition: transform 1s ease; }
+  transition: transform 0.8s ease; }
 
 .modal--visible {
   transform: translateX(0%); }
@@ -756,41 +747,41 @@ body {
   position: absolute;
   right: 0;
   top: 0; }
-  .feedback .main-title {
+  .feedback .main-title--m {
     margin-left: -16px; }
   .feedback .button--close {
     position: static; }
     .feedback .button--close:hover {
       transform: rotate(360deg);
       transition: transform 1s ease; }
-  .feedback form {
+  .feedback .form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start; }
-    .feedback form * {
+    .feedback .form * {
       margin-bottom: 16px; }
-    .feedback form input, .feedback form textarea {
+    .feedback .form input, .feedback .form textarea {
       border: 1px solid #EAEAEA;
       border-radius: 8px;
       padding: 12px 16px; }
-      .feedback form input::-webkit-input-placeholder, .feedback form textarea::-webkit-input-placeholder {
+      .feedback .form input::-webkit-input-placeholder, .feedback .form textarea::-webkit-input-placeholder {
         color: #B5B6BC; }
-      .feedback form input::-moz-placeholder, .feedback form textarea::-moz-placeholder {
+      .feedback .form input::-moz-placeholder, .feedback .form textarea::-moz-placeholder {
         color: #B5B6BC; }
-      .feedback form input:-ms-input-placeholder, .feedback form textarea:-ms-input-placeholder {
+      .feedback .form input:-ms-input-placeholder, .feedback .form textarea:-ms-input-placeholder {
         color: #B5B6BC; }
-      .feedback form input::placeholder, .feedback form textarea::placeholder {
+      .feedback .form input::placeholder, .feedback .form textarea::placeholder {
         color: #B5B6BC; }
-    .feedback form textarea {
+    .feedback .form textarea {
       resize: none; }
-    .feedback form a {
+    .feedback .form a {
       color: #ff3e79;
       font-weight: 500;
       line-height: 16px; }
-  .feedback .button-ui {
-    width: 136px;
-    margin-left: auto;
-    background-position: 109px center; }
+    .feedback .form__button {
+      width: 136px;
+      margin-left: auto;
+      background-position: 109px center; }
 
 .form__hide {
   display: none; }
