@@ -113,8 +113,20 @@
 }
 @media(min-width: 1440px) {
     .tabs {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        &__item {
+            margin-right: 8px;
+        }
+        &:last-child {
+            margin-left: 26px;
+            margin-top: 6px;
+        }
         &:before, &:after {
             display: none;
+        }
+        &__item--active{
+            margin-left: 0;
         }
     }
 }
