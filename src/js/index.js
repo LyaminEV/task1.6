@@ -64,17 +64,27 @@ technicsButton.addEventListener('click', function () {
 
 let buttonMenu = document.querySelector('.header__button--menu');
 let menu = document.querySelector('.modal-menu');
-
+let logo = document.querySelector('.separator')
 buttonMenu.addEventListener('click', function () {
     if (menu.classList.contains("menu--visible")) {
         menu.classList.remove("menu--visible")
-        buttonMenu.classList.remove("button--close")
+        buttonMenu.classList.remove("button--close");
+        logo.classList.remove('logo--m');
     } else {
     menu.classList.add('menu--visible')
     buttonMenu.classList.add("button--close")
+    logo.classList.add('logo--m');
     }
 });
-
+// при клике на блюр закрывается menu
+let html = document.querySelector('html');
+html.addEventListener('click', function (e) {
+    if (e.target.classList.contains('modal-menu')) {
+        menu.classList.remove('menu--visible');
+        logo.classList.remove('logo--m');
+        buttonMenu.classList.remove("button--close");
+    }
+});
 
 let modal = document.querySelector('.modal');
 let closeButton = modal.querySelector('.button--close');
@@ -95,6 +105,7 @@ for (let i = 0; i < buttonFeedbackChat.length; i++) {
         inputMail.classList.remove('form__hide');
         inputName.classList.remove('form__hide');
         inputMessage.classList.remove('form__hide');
+        logo.classList.remove('logo--m');
     });
 }
 
@@ -104,6 +115,7 @@ closeButton.addEventListener('click', function () {
 
 
 let buttonFeedbackCall = document.querySelectorAll('.communication__button--call');
+
 for (let i = 0; i < buttonFeedbackCall.length; i++) {
     buttonFeedbackCall[i].addEventListener('click', function () {
 
@@ -114,6 +126,13 @@ for (let i = 0; i < buttonFeedbackCall.length; i++) {
         inputMail.classList.add('form__hide');
         inputName.classList.add('form__hide');
         inputMessage.classList.add('form__hide');
+        logo.classList.remove('logo--m');
     });
 }
-
+// при клике на блюр закрывается feedback
+html.addEventListener('click', function (e) {
+    if (e.target.classList.contains('modal')) {
+        modal.classList.remove('modal--visible');
+        logo.classList.remove('logo--m');
+    }
+});

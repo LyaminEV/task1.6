@@ -37,7 +37,7 @@
     }
 }
 .content {
-    margin: 24px 0;
+    padding: 24px 0;
 }
 .about{
     display: flex;
@@ -105,28 +105,16 @@
     }
 }
 @media(min-width: 1120px) {
-    .main {
-        &__title{
-            padding-left: 20px;
-        }
-    }
-    .tabs {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        &__item {
-            margin-right: 12px;
-            &:last-child {
-                margin-left: 26px;
-                margin-top: 6px;
-                }
-            }
-        &:before, &:after {
-            display: none;
-        }
-    }
     .about {
         &__text-hidden {
             display: inline;
+        }
+    }
+}
+@media(min-width: 1440px) {
+    .tabs {
+        &:before, &:after {
+            display: none;
         }
     }
 }
