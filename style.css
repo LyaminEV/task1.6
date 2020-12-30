@@ -720,9 +720,7 @@ body {
       .modal-menu .menu__logo {
         margin-left: 0; }
     .modal-menu .button--close {
-      display: none; }
-    .modal-menu .language-switch {
-      margin-bottom: 40px; } }
+      display: none; } }
 
 .modal {
   width: 100%;
@@ -808,7 +806,8 @@ body {
       flex-direction: row;
       background-color: #fff; }
       html body .main-block {
-        background-color: #F8F8F8; } }
+        background-color: #F8F8F8;
+        width: 1120px; } }
 
 
 /*# sourceMappingURL=style.css.map*/
