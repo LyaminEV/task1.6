@@ -466,8 +466,18 @@ body {
     display: inline; } }
 
 @media (min-width: 1440px) {
-  .tabs:before, .tabs:after {
-    display: none; } }
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: flex-start; }
+    .tabs__item {
+      margin-right: 8px; }
+    .tabs:last-child {
+      margin-left: 26px;
+      margin-top: 6px; }
+    .tabs:before, .tabs:after {
+      display: none; }
+    .tabs__item--active {
+      margin-left: 0; } }
 
 .prices {
   padding-bottom: 40px; }
